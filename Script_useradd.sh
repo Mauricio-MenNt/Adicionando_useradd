@@ -3,7 +3,7 @@
 #-Nesse Script adicionaremos user ao serve de forma simples!
 #-O objetivo é decidir número de user e que eles possam gerenciar a pr#ópria senh#a ao logar.
 
-#-Como utilizar o script: Esse Script é necessário digitar a frente a #quantidade de user a ser criado apenas ex: "./Script 5" estarei infor#mando que 5 user devem ser criados.
+#-Como utilizar o script: Esse Script é interativo, simplesmente leia e durante a execução.
 
 read -p "Deseja criar diretórios?[S/n] " resp
 
@@ -18,6 +18,7 @@ case $resp in
       mkdir $nomed
       x=$[ x + 1 ]
     done;;
+    chmod 770 $nomed
     "N" | "n")
       echo "Sem crição de diretório";;
     *)
@@ -72,6 +73,6 @@ done
 
 #A senha inicial é "senha"
 
-#O comando "-e" é utilizado sem data para que seja necessário no prime#iro login do user criado a mudança da senha.
+#O comando "-e" é utilizado sem data para que seja necessário no primeiro login do user criado a mudança da senha.
 
-#Em algumas versões é necessário do server pode sernecessário o parâme#tro adicional -crypt: -p $(openssl passwd -crypt senha).
+#Em algumas versões é necessário do server pode sernecessário o parâmetro adicional -crypt: -p $(openssl passwd -crypt senha).
